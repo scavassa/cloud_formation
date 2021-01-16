@@ -3,7 +3,7 @@ This CloudFormation Scripts deploys 1 VPC (Virtual Private Cloud) across 2 AZs (
 
 It also deploys 2 AutoScaling Groups, 1 that is reponsible for maintain a WebApp that has 4 EC2 instances, each 2 of them hosted in 1 of the private subnets, another AutoScaling Group is reponsible for maintain a bastion host in 1 of the public subnets so we can use it as a jump host to access the WebApp servers for troubleshotting.
 
-It contains 2 NAT Gateways, each one in one of the public subnets, so the WebApps can answer HTTP requests properly to the Internet, it also implements a Load Balancer that distribute the load across the multiple servers and an Internet Gateway.
+It contains 2 NAT Gateways, each one in one of the public subnets, so the WebApps can fetch updates properly from the Internet, it also implements a Load Balancer that distribute the load across the multiple servers and an Internet Gateway.
 
 Last but not least it deploys a S3 bucket and a proper role, policy and IAM Profile so the EC2 instances can fetch (read and list) source code or information from that bucket, when the EC2 instances is provisioned it installs the AWS CLI, Apache and put some info into `index.html`.
 
