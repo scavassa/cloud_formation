@@ -15,6 +15,7 @@ Last but not least it deploys a S3 bucket and a proper role, policy and IAM Prof
   * diagram.png
   * final-project.yml
   * parameters.json
+  * printscreen.png
   * README.md
 
 #### cloudformation.sh
@@ -28,6 +29,10 @@ This file contains the CloudFormation script in YAML format.
 
 #### parameters.json
 Parameters used by de CloudFormation script in JSON format.
+
+#### printscreen.png
+A simple printscreen showing the WebApp up and running after provisioning in AWS.
+
 
 ## Instructions
 
@@ -44,12 +49,13 @@ Parameters used by de CloudFormation script in JSON format.
     #When testing change InstanceType to t2.micro to avoid costs!
     InstanceType: t3.medium
     ```
-5. Run the script passing as parameters the name of the stack and the action ( create | update | delete ) like the example below:
+5. Consider commenting out sessions related to KeyName, Bastion and SSH port 22 if you want remote access to the environment.
+6. Run the script passing as parameters the name of the stack and the action ( create | update | delete ) like the example below:
     ```
     ./cloudformation.sh MyStackTest create
     ```
-6. You can test if the application is up and running accessing the URL of the Load Balancer that is outputed when the stack is created.
-7. Have fun! :)
+7. You can test if the application is up and running accessing the URL of the Load Balancer that is outputed when the stack is created.
+8. Have fun! :)
 
 
 
